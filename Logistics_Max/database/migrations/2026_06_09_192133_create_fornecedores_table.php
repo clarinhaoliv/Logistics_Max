@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('fornecedores', function (Blueprint $table) {
             $table->id();
+            $table->string('cnpj')->unique();
             $table->string('nome');
             $table->string('contato');
-            $table->string('CNPJ');
             $table->timestamps();
         });
     }

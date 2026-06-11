@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('cargas', function (Blueprint $table) {
             $table->id();
+            $table->string('destino');
+            $table->string('tipo_movimento');
+            $table->dateTime('data_movimento');
+            $table->integer('quantidade_movimento');
+            $table->foreignId('id_pallet')->nullable()->constrained('pallets')->cascadeOnDelete();
+            $table->foreignId('id_caixa')->nullable()->constrained('caixas')->cascadeOnDelete();
+            $table->enum('status', ['Recebido', 'Em Processamento', 'Expedido']);
             $table->timestamps();
         });
     }

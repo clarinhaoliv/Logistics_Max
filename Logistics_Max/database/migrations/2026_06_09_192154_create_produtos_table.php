@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('nome');
             $table->decimal('preco', 8, 2)->default(0.00);
             $table->integer('quantidade')->default(0);
-            $table->string('codigo_produto')->nullable();
+            $table->string('codigo_produto')->unique();
             $table->timestamps();
         });
     }

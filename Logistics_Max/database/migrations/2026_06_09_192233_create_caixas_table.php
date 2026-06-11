@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('caixas', function (Blueprint $table) {
             $table->id();
+            $table->string('codigo_caixa')->unique();
+            $table->decimal('peso_carga', 10, 2);
+            $table->decimal('altura', 8, 2);
+            $table->decimal('largura', 8, 2);
+            $table->decimal('profundidade', 8, 2);
+            $table->enum('unidade_peso', ['Grama', 'Quilograma', 'Tonelada']);
+            $table->enum('status', ['Recebido', 'Em Processamento', 'Expedido']);
             $table->timestamps();
         });
     }
