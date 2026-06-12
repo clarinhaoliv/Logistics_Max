@@ -12,10 +12,6 @@ class Carga extends Model
         'id_caixa', 'id_pallet', 'destino', 'status', 'tipo_movimento', 'data_movimento', 'quantidade_movimento', 
     ];
 
-    protected $casts = [
-        'data_movimento' => 'date',
-    ];
-
     public function caixas()
     {
         return $this->belongsTo(Caixa::class, 'id_caixa');

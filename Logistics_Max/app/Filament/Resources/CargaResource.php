@@ -61,10 +61,6 @@ class CargaResource extends Resource
                 ->required()
                 ->maxLength(255),
 
-            Forms\Components\DateTimePicker::make('data_movimento')
-                ->label('Data do Movimento')
-                ->required(),
-
             Forms\Components\TextInput::make('quantidade_movimento')
                 ->label('Quantidade')
                 ->numeric()
@@ -80,7 +76,6 @@ class CargaResource extends Resource
                 Tables\Columns\TextColumn::make('status'),
                 Tables\Columns\TextColumn::make('tipo_movimento'),
                 Tables\Columns\TextColumn::make('quantidade_movimento'),
-                Tables\Columns\TextColumn::make('data_movimento')->dateTime(),
                 Tables\Columns\TextColumn::make('created_at')->dateTime(),
             ])
             ->filters([
